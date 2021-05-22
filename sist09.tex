@@ -1,0 +1,196 @@
+﻿\documentclass[uplatex]{jsarticle}
+
+\usepackage{sist09}
+\usepackage{booktabs}%表組み
+\usepackage{mathtools}\mathtoolsset{showonlyrefs=true}%数式番号
+\usepackage{gitinfo2}
+
+\usepackage{listings,jlisting}
+\lstset{
+language={TeX},
+%backgroundcolor={\color[gray]{.85}},
+basicstyle={\ttfamily\small},
+identifierstyle={\small},
+commentstyle={\small\ttfamily \color[rgb]{1,0,0}},
+keywordstyle={\small\bfseries \color[rgb]{0,0,1}},
+ndkeywordstyle={\small\bfseries \color[rgb]{0,1,0}},
+stringstyle={\small\ttfamily \color[rgb]{0,0,1}},
+frame={tb},
+breaklines=true,
+columns=[l]{fullflexible},
+numbers=left,
+xrightmargin=0zw,
+xleftmargin=3zw,
+numberstyle={\scriptsize},
+stepnumber=1,
+numbersep=1zw,
+morecomment=[l]{//}
+}
+
+\author{渡邉充哉}
+\date{\today}
+\title{sist09.sty}
+
+%titlepageここから
+\renewcommand{\sistTitle}{sist09}%標題
+\renewcommand{\Engtitle}{sist09}%英文標題
+\renewcommand{\reportnumber}{}%レポート番号
+\renewcommand{\thesis}{パッケージ説明文書}%レポート名
+\renewcommand{\edition}{(v1.0.0)}%レポートの種類・版表示
+\renewcommand{\id}{}%学籍番号
+\renewcommand{\sistAuthor}{渡邉　充哉}%著者
+\renewcommand{\Engauthor}{WATANABE Atsuya}%英文著者名
+\renewcommand{\freespace}{}
+\renewcommand{\yearr}{2021}%発行年
+\renewcommand{\sistDate}{\today}%発行日
+\renewcommand{\organization}{~}
+\renewcommand{\department}{~}%発行者名
+\renewcommand{\Engdepartment}{}%英文発行者名
+\renewcommand{\address}{}%発行者所在地
+\renewcommand{\tel}{}%発行者電話番号
+\renewcommand{\mail}{}
+\renewcommand{\editdata}{\sistDate}%版履歴
+
+\begin{document}
+\maketitle
+% \maketitlepage%表紙
+\pagenumbering{roman}
+%\makedocumentseet
+
+\begin{abstract}
+このスタイルファイルはSIST 09（科学技術情報流通技術基準 科学技術レポートの様式）に沿った文書作成を支援するものです。
+\end{abstract}
+
+\tableofcontents%目次
+\thispagestyle{empty}%ページ番号消去
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+%==========記事ここから==========
+\section{変数}
+このスタイルファイルでは表\ref{tbl:variable}に示したように多くの変数及び命令を定義した。
+\begin{table*}
+\centering
+\caption{定義した変数及び命令\label{tbl:variable}}
+\begin{tabular}{lll}
+\toprule
+\multicolumn{2}{l}{変数}				&	内容\\
+\midrule
+\multicolumn{2}{l}{表紙・奥付用変数}\\
+&\verb|\sistTitle|		&	表題\\
+&\verb|\Engtitle|	&	英文標題\\
+&\verb|\reportnumber|	&	レポート番号\\
+&\verb|\thesis|		&	レポート名\\
+&\verb|\edition|		&	版表示\\
+&\verb|\id|			&	学籍番号\\
+&\verb|\sistAuthor|		&	著者\\
+&\verb|\Engauthor|	&	英文著者名\\
+&\verb|\freespace|	&	空白スペース\\
+&\verb|\yearr|		&	発行年（数字だけ）\\
+&\verb|\sistDate|		&	発行日\\
+&\verb|\organization|&	所属機関\\
+&\verb|\department|	&	発行者名\\
+&\verb|\Engdepartment|&	英文発行者名\\
+&\verb|\address|		&	発行者所在地\\
+&\verb|\tel|			&	発行者電話番号\\
+&\verb|\mail|		&	発行者メールアドレス\\
+&\verb|\editdata|	&	版履歴\\
+\multicolumn{2}{l}{ドキュメントシート用変数}\\
+&\verb|\syoroku|		&	抄録\\
+&\verb|\datee|		&	発行日（yyyy-mm-dd）\\
+&\verb|\Engaddress|	&	英文発行者所在地\\
+&\verb|\ISBN|		&	ISBN\\
+&\verb|\ISSN|		&	ISSN\\
+&\verb|\keyword|		&	キーワード\\
+&\verb|\thesaurus|	&	シソーラス\\
+&\verb|\category|	&	分類（NDC等）\\
+&\verb|\valuee|		&	価格\\
+命令
+&\verb|\maketitlepage|		&	表紙の出力\\
+&\verb|\makedocumentseet|	&	ドキュメントシートの出力\\
+&\verb|\makeokuzuke|		&	奥付の出力\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\section{依存関係}
+
+\section{使用例}
+\verb|sist09templete.tex|をタイプセットすると次のような結果が得られます。
+\clearpage
+\lstinputlisting[caption=テンプレート ``sist09.tex'',label=templete]{sist09templete.tex}
+\clearpage
+
+\renewcommand{\sistTitle}{\tt\textbackslash sistTitle}%標題
+\renewcommand{\Engtitle}{\tt\textbackslash Engtitle}%英文標題
+\renewcommand{\reportnumber}{\tt\textbackslash reportnumber}%レポート番号
+\renewcommand{\thesis}{\tt\textbackslash thesis}%レポート名
+\renewcommand{\edition}{\tt\textbackslash edition}%レポートの種類・版表示
+\renewcommand{\id}{\tt\textbackslash id}%学籍番号
+\renewcommand{\sistAuthor}{\tt \textbackslash sistAuthor}%著者
+\renewcommand{\Engauthor}{\tt\textbackslash Engauthor}%英文著者名
+\renewcommand{\freespace}{\tt\textbackslash freespace}
+\renewcommand{\yearr}{\tt\textbackslash yearr}%発行年
+\renewcommand{\sistDate}{\tt\textbackslash sistDate}%発行日
+\renewcommand{\organization}{\tt\textbackslash organization}
+\renewcommand{\department}{\tt\textbackslash department}%発行者名
+\renewcommand{\Engdepartment}{\tt\textbackslash Engdepartment}%英文発行者名
+\renewcommand{\address}{\tt\textbackslash address}%発行者所在地
+\renewcommand{\tel}{\tt\textbackslash tel}%発行者電話番号
+\renewcommand{\mail}{\tt\textbackslash mail}
+\renewcommand{\editdata}{\tt\textbackslash editdata}%版履歴
+\renewcommand{\syoroku}{\tt\textbackslash syoroku}
+\renewcommand{\datee}{\tt\textbackslash datee}
+\renewcommand{\Engaddress}{\tt\textbackslash Engaddress}
+\renewcommand{\ISBN}{\tt\textbackslash ISBN}
+\renewcommand{\ISSN}{\tt\textbackslash ISSN}
+\renewcommand{\keyword}{\tt\textbackslash keyword}
+\renewcommand{\thesaurus}{\tt\textbackslash thesaurus}
+\renewcommand{\category}{\tt\textbackslash category}
+\renewcommand{\valuee}{\tt\textbackslash valuee}
+\maketitlepage
+\makedocumentseet
+
+%\makeokuzuke
+%----------奥付----------
+%mailリンク内で\textbackslashが使えないので。
+\begin{table}[b]
+\centering
+\begin{tabular}{ll}
+\vbox to 180mm{\vfill}	\\
+\multicolumn{2}{l}{\small\thesis}	\\
+\multicolumn{1}{l}{\Large\sistTitle}&	\\
+\toprule
+\editdata	\\
+%	&編集並びに発行	\\
+\sistAuthor\\
+\organization	\\
+\department	\\
+\address	\\
+TEL: \tel	\\ 
+Mail: \href{mailto:mail}{\mail}	\\	\bottomrule
+%\multicolumn{2}{c}{\copyright \yearr \organization}
+\end{tabular}
+\end{table}
+%----------奥付----------
+\renewcommand{\sistTitle}{sist09}%標題
+\renewcommand{\Engtitle}{sist09}%英文標題
+\renewcommand{\reportnumber}{}%レポート番号
+\renewcommand{\thesis}{スタイルファイル解説文書}%レポート名
+\renewcommand{\edition}{v1.0.0}%レポートの種類・版表示
+\renewcommand{\id}{}%学籍番号
+\renewcommand{\sistAuthor}{渡邉　充哉}%著者
+\renewcommand{\Engauthor}{WATANABE Atsuya}%英文著者名
+\renewcommand{\freespace}{}
+\renewcommand{\yearr}{2021}%発行年
+\renewcommand{\sistDate}{\today}%発行日
+\renewcommand{\organization}{~}
+\renewcommand{\department}{~}%発行者名
+\renewcommand{\Engdepartment}{}%英文発行者名
+\renewcommand{\address}{}%発行者所在地
+\renewcommand{\tel}{}%発行者電話番号
+\renewcommand{\mail}{}
+\renewcommand{\editdata}{\sistDate}%版履歴
+
+%==========記事ここまで==========
+\end{document}

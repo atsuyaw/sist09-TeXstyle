@@ -1,0 +1,54 @@
+﻿\documentclass[uplatex]{jsarticle}
+
+\usepackage{sist09}
+
+% titlepageここから
+\renewcommand{\sistTitle}{\tt\textbackslash sistTitle}%標題
+\renewcommand{\Engtitle}{\tt\textbackslash Engtitle}%英文標題
+\renewcommand{\reportnumber}{\tt\textbackslash reportnumber}%レポート番号
+\renewcommand{\thesis}{\tt\textbackslash thesis}%レポート名
+\renewcommand{\edition}{\tt\textbackslash edition}%レポートの種類・版表示
+\renewcommand{\id}{\tt\textbackslash id}%学籍番号
+\renewcommand{\sistAuthor}{\tt \textbackslash sistAuthor}%著者
+\renewcommand{\Engauthor}{\tt\textbackslash Engauthor}%英文著者名
+\renewcommand{\freespace}{\tt\textbackslash freespace}
+\renewcommand{\yearr}{\tt\textbackslash yearr}%発行年
+\renewcommand{\sistDate}{\tt\textbackslash sistDate}%発行日
+\renewcommand{\organization}{\tt\textbackslash organization}
+\renewcommand{\department}{\tt\textbackslash department}%発行者名
+\renewcommand{\Engdepartment}{\tt\textbackslash Engdepartment}%英文発行者名
+\renewcommand{\address}{\tt\textbackslash address}%発行者所在地
+\renewcommand{\tel}{\tt\textbackslash tel}%発行者電話番号
+\renewcommand{\mail}{\tt\textbackslash mail}
+\renewcommand{\editdata}{\tt\textbackslash editdata}%版履歴
+\renewcommand{\syoroku}{\tt\textbackslash syoroku}
+\renewcommand{\datee}{\tt\textbackslash datee}
+\renewcommand{\Engaddress}{\tt\textbackslash Engaddress}
+\renewcommand{\ISBN}{\tt\textbackslash ISBN}
+\renewcommand{\ISSN}{\tt\textbackslash ISSN}
+\renewcommand{\keyword}{\tt\textbackslash keyword}
+\renewcommand{\thesaurus}{\tt\textbackslash thesaurus}
+\renewcommand{\category}{\tt\textbackslash category}
+\renewcommand{\valuee}{\tt\textbackslash valuee}
+
+\begin{document}
+\maketitlepage% 表紙出力
+\makedocumentseet% ドキュメントシート出力
+\pagenumbering{roman}
+\tableofcontents% 目次
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+% ==========記事ここから==========
+
+% ==========記事ここまで==========
+\section*{参照文献}
+\begin{thebibliography}{9}
+\bibitem{}
+\end{thebibliography}
+
+\clearpage
+\clearpage
+\makeokuzuke
+\end{document}

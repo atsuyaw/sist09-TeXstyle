@@ -114,6 +114,14 @@ morecomment=[l]{//}
 \end{table*}
 
 \section{依存関係}
+必要なパッケージは以下の通りです。
+\begin{itemize}
+    \item geometry
+    \item booktabs
+    \item url
+    \item hyperref
+    \item pxjahyper
+\end{itemize}
 
 \section{使用例}
 \verb|sist09templete.tex|をタイプセットすると次のような結果が得られます。
@@ -168,7 +176,8 @@ morecomment=[l]{//}
 \department	\\
 \address	\\
 TEL: \tel	\\ 
-Mail: \href{mailto:mail}{\mail}	\\	\bottomrule
+Mail: \mail	\\
+\bottomrule
 %\multicolumn{2}{c}{\copyright \yearr \organization}
 \end{tabular}
 \end{table}
